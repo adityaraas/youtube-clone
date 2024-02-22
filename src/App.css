@@ -1,0 +1,79 @@
+.App{
+  background-color: blue;
+}
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: grey;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.search-input {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 6px 1px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+}
+
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.video-item {
+  flex: 0 0 calc(33.333% - 20px); /* Adjust width to fit three videos per row */
+  margin-bottom: 20px;
+}
+
+.video-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-form {
+  margin-top: 20px;
+}
+
+.video-input {
+  width: 50%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-button {
+   width: 48%;
+  padding: 12px 24px; /* Increased padding */
+  font-size: 16px; /* Increased font size */
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}

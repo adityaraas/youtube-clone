@@ -1,0 +1,23 @@
+
+.container{ 
+          width: 14em;
+          margin : 0 0.2em;
+          float : left;
+}
+.pic img { 
+  width: 90%;
+  
+}
+.title { 
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        color: white;
+        font-weight: bold;
+        margin-bottom : 0.1em;
+}
+.views , .channel { 
+        font-size: small;
+        color : #ccc;
+        
+        
+}

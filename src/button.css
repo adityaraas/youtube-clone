@@ -1,0 +1,22 @@
+button {
+  background-color: pink; /* Green */
+  border: 1 px solid yellow ;
+  color: #471a1a;
+  padding: 0.9em ;
+  /* text-align: center; */
+  text-decoration: ;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 1em;
+  text-align: checked;
+
+
+  cursor: pointer;
+  width : 75%;
+  height : 50p
+
+}
+button:hover{
+  background-color : yellowgreen;
+  color: white;
+  }
