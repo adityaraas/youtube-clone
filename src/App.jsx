@@ -8,6 +8,8 @@ export default function App() {
   const [videos, setVideos] = useState(videoData);
   const [inputTitle, setInputTitle] = useState('');
   const [inputChannel, setInputChannel] = useState('');
+   const [searchTerm, setSearchTerm] = useState('');
+
 
   const handleTitleChange = (event) => {
     setInputTitle(event.target.value);
@@ -35,16 +37,27 @@ export default function App() {
       setInputChannel('');
     }
   };
+  const handleSearch = (event) => {
+    event.preventDefault();
+    // Filter videos based on the search term in the title
+    const filteredVideos = videos.filter((video) =>
+      video.title.toLowerCase().includes(searchTerm.toLowerCase()) || video.channel.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setVideos(filteredVideos);
+  };
+
 
   return (
     <div className='app-container'>
       <div className='header'>
         <h1>YouTube</h1>
-        <form>
+        <form onSubmit={handleSearch}>
           <input
             type='text'
             placeholder='Search'
             className='search-input'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button type='submit' className='search-button'>
             Search
