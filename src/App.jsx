@@ -4,6 +4,7 @@ import Video from './video'; // Make sure the component names match your actual 
 import Playbutton from './play'; // Make sure the component names match your actual component names
 import videoData from './data/data.js';
 
+
 export default function App() {
   const [videos, setVideos] = useState(videoData);
   const [inputTitle, setInputTitle] = useState('');
@@ -37,21 +38,16 @@ export default function App() {
       setInputChannel('');
     }
   };
-  const handleSearch = (event) => {
-    event.preventDefault();
-    // Filter videos based on the search term in the title
-    const filteredVideos = videos.filter((video) =>
-      video.title.toLowerCase().includes(searchTerm.toLowerCase()) || video.channel.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setVideos(filteredVideos);
-  };
+ 
+
+    
 
 
   return (
     <div className='app-container'>
       <div className='header'>
         <h1>YouTube</h1>
-        <form onSubmit={handleSearch}>
+        <form >
           <input
             type='text'
             placeholder='Search'
@@ -59,9 +55,7 @@ export default function App() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button type='submit' className='search-button'>
-            Search
-          </button>
+          
         </form>
       </div>
 
@@ -87,7 +81,9 @@ export default function App() {
         </div>
 
         <div className='video-list'>
-          {videos.map((video) => (
+          {videos.filter((item)=>{
+      return searchTerm.toLowerCase()===''?item:item.title.toLowerCase().includes(searchTerm.toLowerCase()) || item.channel.toLowerCase().includes(searchTerm.toLowerCase())})
+            .map((video) => (
             <div key={video.id} className='video-item'>
               <Video
                 title={video.title}
